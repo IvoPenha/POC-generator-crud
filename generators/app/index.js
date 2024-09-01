@@ -5,7 +5,7 @@ export default class extends Generator {
     this.argument('name', { type: String, required: false });
 
 
-    this.option('db', {
+    this.option('bd', {
       description: 'Nome da tabela no banco de dados',
       type: String,
       alias: 'b',
@@ -63,7 +63,7 @@ export default class extends Generator {
       const fileName = file === 'index.ts' ? file : `${name}.${file}`;
       this.fs.copyTpl(
         this.templatePath(file),
-        this.destinationPath(`${name}/${fileName}`),
+        this.destinationPath(`src/useCases/${name}/${fileName}`),
         variables
       );
     }); 

@@ -6,4 +6,4 @@ import { type <%= className %> } from './<%= name %>.entity';
 
 export type <%= className %>Dto = DeepPartial<<%= className %>>;
 
-export type <%= className %>Paginate = QueryPagination & {};
+export type <%= className %>Paginate = QueryPagination & { name: string };

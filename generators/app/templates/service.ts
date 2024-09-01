@@ -4,12 +4,14 @@ import type { DataSourceService } from '#/services/DataSourceService';
 import { LogClass } from '#/services/LoggerService/log-class.decorator';
 import type { IResponsePaginated, PaginateService } from '#/services/PaginateService';
 
+import { parseOrderDto } from '#/database/db.helper';
+
 import type { <%= className %>Dto, <%= className %>Paginate } from './<%= name %>.dto';
 import { <%= className %> } from './<%= name %>.entity';
 
 type <%= className %>FindOption = {
   id: number;
-}
+};
 
 @LogClass
 export class <%= className %>Service {
@@ -18,7 +20,7 @@ export class <%= className %>Service {
   constructor(
     private readonly dataSource: DataSourceService,
     private readonly paginateService: PaginateService
-  ) { 
+  ) {
     this.repo = this.dataSource.getRepository(<%= className %>);
   }
 
@@ -52,7 +54,7 @@ export class <%= className %>Service {
     return result;
   }
 
-  async paginate({ search, name, ...pagination }: <%= className %>Paginate): Promise<IResponsePaginated<<%= className %>Dto>> {
+  async paginate({ name, order, search, ...pagination }: <%= className %>Paginate): Promise<IResponsePaginated<<%= className %>Dto>> {
     const searchFields = ['<%= className %>.ip', '<%= className %>.title', '<%= className %>.id'];
 
     const query = this.repo.createQueryBuilder('<%= className %>').select(); 

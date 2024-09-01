@@ -1,8 +1,9 @@
 import { Router } from 'express';
 
-import { dataSource } from '#/useCases/datasource.service'; 
+import { dataSource } from '#/useCases/datasource.service';
+
 import { paginateService } from '../paginate.service';
- 
+
 import { <%= className %>Controller } from './<%= name %>.controller';
 import { <%= className %>Service } from './<%= name %>.service';
 
