@@ -1,0 +1,16 @@
+{
+  "name": "generator-crud",
+  "version": "0.1.0",
+  "description": "",
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^7.3.2",
+    "shelljs": "^0.8.4"
+  }, 
+  "type": "module"
+}
